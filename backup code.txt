@@ -1,0 +1,29 @@
+/*If RowNum
+If c = 21 Then
+Print #1, "<a href="""" disabled=""true"" style=""text-align:left;color:green""> << </a>"
+Print #1, "<a href=""test" & c & """ style=""text-align:left;color:green""> >> </a>"
+Print #1, "</div>"
+Print #1, "</body>"
+Print #1, "</html>"
+Exit For
+ElseIf c Mod 20 = 1 And RowNum - c < 20 Then
+Print #1, "<a href=""test" & y & """ style=""text-align:left;color:green""> >> </a>"
+Print #1, "<a href="""" disbled= ""true"" style=""text-align:left;color:green""> >> </a>"
+Print #1, "</div>"
+Print #1, "</body>"
+Print #1, "</html>"
+Exit For
+ElseIf c Mod 20 = 1 And c <> 21 Then
+Print #1, "<a href=""test" & y & """ style=""text-align:left;color:green""> >> </a>"
+Print #1, "<a href=""test" & c & """ style=""text-align:left;color:green""> >> </a>"
+Print #1, "</div>"
+Print #1, "</body>"
+Print #1, "</html>"
+Exit For
+
+
+If (c < RowNumber) Then
+Call CreateHTMLWishes(colNumber, ColNumber2, RowNumber)
+End If
+
+End If

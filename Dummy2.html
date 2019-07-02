@@ -1,0 +1,90 @@
+Public Function CreateHTMLWishes(colNumber As Int,colNumber2 As Int, rowNumber As Int) As String
+
+For j=c; j< RowNum; j++
+{
+Dim y=c
+Dim sFile As String
+   sFile = "C:\Users\eh2guqu\Desktop\Logs\Run" & "\test" & c &".html"
+Close
+
+Open sFile For Output As #1
+Print #1, "<html>"
+Print #1, "<head>"
+Print #1, "<meta name=""viewport"" content=""width=device-width, initial-scale=1"">"
+Print #1, "<link rel=""stylesheet"" type=""text/css"" href=""C:\Users\eh2guqu\Desktop\Logs\Run\w3.css"">"
+Print #1, "<link rel=""stylesheet"" type=""text/css"" href=""C:\Users\eh2guqu\Desktop\Logs\Run\Fire.css"">"
+Print #1, "<link rel=""stylesheet"" type=""text/css"" href=""C:\Users\eh2guqu\Desktop\Logs\Run\Balloon.css"">"
+Print #1, "</head>"
+Print #1, "<body>"
+
+Print #1, "<div class=""pyro"">"
+Print #1, "  <div class=""before""></div>"
+ Print #1, " <div class=""after""></div>"
+Print #1, "</div>"
+
+For i=c;i<RowNum;i++
+{
+Print #1, "<div class=""row"">"
+ Print #1, "Print #1, " <div class=""column""  style=""border-right:5px solid red;text-align:right;color:green"">"
+ Print #1, "   <h2 >" & Cells(i,1).Value & " says : </h2>"
+ 
+If Cells(i,colNumber)<> "" Then
+ Print #1, "<p background-color=""green"" >" & Cells(i,colNumber).Value  & "</p>"
+
+ 
+If Cells(i,colNumber2)= ".jpg" or ".png" or ".jpeg" Then
+Print #1, "    <p><img src="" " & Cells(i,colNumber2).Value & ".jpg"" class=""thumbnail"" height=""100"" width=""100"" /></p>"
+
+Else If Cells(i,colNumber2) = ".mp4" Then
+Print #1, "	<video  width=""320"" height=""240"" controls>"
+Print #1, " <source type=""video/mp4"" src=""" & Cells(i,colNumber2).Value &""">"
+Print #1, "</video>"
+
+End If
+
+Print #1, " </div>"
+Print #1, "  <div class=""column"" style=""text-align:left;color:green"">"
+ Print #1, "   <h2 >" & Cells(i,1).Value & " says : </h2>"
+ 
+If Cells(i,colNumber)<> "" Then
+ Print #1, "<p background-color=""green"" >" & Cells(i,colNumber).Value  & "</p>"
+
+ 
+If Cells(i,colNumber2)= ".jpg" or ".png" or ".jpeg" Then
+Print #1, "    <p><img src=""" & Cells(i,colNumber2).Value & ".jpg"" class=""thumbnail"" height=""100"" width=""100"" /></p>"
+
+Else If Cells(i,colNumber2) = ".mp4" Then
+Print #1, "	<video  width=""320"" height=""240"" controls>"
+Print #1, " <source type=""video/mp4"" src=""" & Cells(i,colNumber2).Value &".mp4"">"
+Print #1, "</video>"
+
+End If
+
+Print #1, " </div>"
+
+    c++
+If c==21 Then
+Print #1, "<a href="""" disabled=""true""> << </a>"
+Print #1, "<a href=""test" & c & """ > >> </a>"
+Print #1, "</div>"
+Print #1, "</body>"
+Print #1, "</html>"
+Exit For
+Else If c MOD 20 = 1 Then
+Print #1, "<a href=""test" & y & """ > >> </a>"
+Print #1, "<a href=""test" & c & """ > >> </a>"
+Print #1, "</div>"
+Print #1, "</body>"
+Print #1, "</html>"
+Else If c MOD 20 = 1 and RowNum-c < 20 Then 
+Print #1, "<a href=""test" & y & """ > >> </a>"
+Print #1, "<a href="""" disbled= ""true"" > >> </a>"
+Print #1, "</div>"
+Print #1, "</body>"
+Print #1, "</html>"
+End If
+}
+
+Close
+
+End Function
